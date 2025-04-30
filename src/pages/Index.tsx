@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Award, Certificate, Trophy } from "lucide-react";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -50,6 +49,19 @@ const Index = () => {
     { category: "Frameworks", value: "HTML, CSS, Fast API, Docker" },
     { category: "Tools/Platforms", value: "MySQL, Streamlit, Github, TensorFlow, Langchain" },
     { category: "Soft Skills", value: "Problem-Solving, Team Player, Adaptability, Communication" },
+  ];
+
+  // Certifications and achievements
+  const certifications = [
+    { title: "IBM Certification – Machine Learning", date: "July 2024" },
+    { title: "IBM Verification on Chatbot Building", date: "July 2024" },
+    { title: "Generative AI by DeepLearning.ai", date: "Sept 2023" },
+    { title: "100 Days of Code: Python Pro Bootcamp", date: "Sept 2023" }
+  ];
+  
+  const achievements = [
+    { title: "Hackerrank 5 Star Badge Python", date: "Jan 2024" },
+    { title: "Top 10% at University (Academics and extra-curriculars)", date: "" }
   ];
 
   return (
@@ -102,6 +114,14 @@ const Index = () => {
               </li>
               <li>
                 <Button
+                  variant={activeTab === "certifications" ? "default" : "ghost"}
+                  onClick={() => setActiveTab("certifications")}
+                >
+                  Certifications
+                </Button>
+              </li>
+              <li>
+                <Button
                   variant={activeTab === "contact" ? "default" : "ghost"}
                   onClick={() => setActiveTab("contact")}
                 >
@@ -120,6 +140,7 @@ const Index = () => {
           <TabsList className="hidden">
             <TabsTrigger value="about">About</TabsTrigger>
             <TabsTrigger value="projects">Projects</TabsTrigger>
+            <TabsTrigger value="certifications">Certifications</TabsTrigger>
             <TabsTrigger value="contact">Contact</TabsTrigger>
           </TabsList>
 
@@ -153,7 +174,7 @@ const Index = () => {
                   <h3 className="text-lg font-semibold mb-2 text-violet-800">Highlights & Achievements:</h3>
                   <ul className="list-disc ml-6 text-gray-700 space-y-1">
                     <li>Hackerrank 5 Star Badge in Python for algorithmic excellence (Jan 2024)</li>
-                    <li>Awarded top 10% Dean’s list at University for extra-curriculars and grades</li>
+                    <li>Awarded top 10% Dean's list at University for extra-curriculars and grades</li>
                   </ul>
                   <h3 className="text-lg font-semibold mb-2 text-violet-800 mt-4">Education:</h3>
                   <div>
@@ -218,6 +239,57 @@ const Index = () => {
               </div>
             </section>
           </TabsContent>
+          
+          {/* Certifications & Achievements */}
+          <TabsContent value="certifications" className="space-y-8">
+            <section className="bg-white rounded-lg shadow p-6 animate-fade-in">
+              <h2 className="text-3xl font-bold mb-6 text-violet-900">Certifications & Achievements</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Certifications */}
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Certificate className="text-violet-700" size={24} />
+                    <h3 className="text-xl font-semibold text-violet-800">Certifications</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {certifications.map((cert, index) => (
+                      <Card key={index} className="border-l-4 border-l-violet-500 hover:shadow-md transition-shadow">
+                        <CardContent className="p-4">
+                          <div className="flex justify-between">
+                            <h4 className="font-medium">{cert.title}</h4>
+                            <span className="text-sm text-violet-600">{cert.date}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Achievements */}
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Trophy className="text-amber-600" size={24} />
+                    <h3 className="text-xl font-semibold text-violet-800">Achievements</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {achievements.map((achievement, index) => (
+                      <Card key={index} className="border-l-4 border-l-amber-500 hover:shadow-md transition-shadow">
+                        <CardContent className="p-4">
+                          <div className="flex justify-between">
+                            <h4 className="font-medium">{achievement.title}</h4>
+                            {achievement.date && (
+                              <span className="text-sm text-amber-600">{achievement.date}</span>
+                            )}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          </TabsContent>
 
           {/* Contact */}
           <TabsContent value="contact" className="space-y-8">
@@ -226,7 +298,7 @@ const Index = () => {
               <p className="text-gray-700 mb-6">
                 Feel free to reach out for collaboration, mentorship, or just a conversation!
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Contact</h3>
                   <ul className="space-y-3">
@@ -262,17 +334,6 @@ const Index = () => {
                       <span className="font-medium">Mobile:</span>
                       <span className="text-gray-800 font-mono">+91-6300094352</span>
                     </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-3">Certifications & Achievements</h3>
-                  <ul className="list-disc ml-5 text-gray-700 space-y-2 text-sm">
-                    <li>IBM Certification – Machine Learning (July 2024)</li>
-                    <li>IBM Verification on Chatbot Building (July 2024)</li>
-                    <li>Generative AI by DeepLearning.ai (Sept 2023)</li>
-                    <li>100 Days of Code: Python Pro Bootcamp (Sept 2023)</li>
-                    <li>Hackerrank 5 Star Badge Python (Jan 2024)</li>
-                    <li>Top 10% at University (Academics and extra-curriculars)</li>
                   </ul>
                 </div>
               </div>
