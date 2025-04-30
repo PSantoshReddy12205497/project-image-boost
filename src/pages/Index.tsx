@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,8 +13,8 @@ const Index = () => {
       id: 1,
       title: "Alzheimer's Disease Prediction System",
       description:
-        "Developed an AI-driven Alzheimer’s Disease Prediction System. Designed a Streamlit-based UI for an intuitive and user-friendly experience using Support Vector Machine (SVM) with 93% accuracy. Deployed with IBM Cloud, Streamlit for accessibility, and real-time testing.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80", // circuit board
+        "Developed an AI-driven Alzheimer's Disease Prediction System. Designed a Streamlit-based UI for an intuitive and user-friendly experience using Support Vector Machine (SVM) with 93% accuracy. Deployed with IBM Cloud, Streamlit for accessibility, and real-time testing.",
+      image: "/lovable-uploads/d5b4bc00-b24e-45ce-881f-3ee289a42c87.png", // Alzheimer's disease image
       technologies: ["Python", "scikit-learn", "NumPy", "pandas", "TensorFlow", "Streamlit", "IBMCloud"],
       githubLink: "https://github.com/PSantoshReddy12205497/alzheimers-predictor",
       liveLink: "#",
@@ -24,7 +25,7 @@ const Index = () => {
       title: "E-Commerce Recommendation System",
       description:
         "Built a recommendation system using unsupervised algorithms (K-Means, DBSCAN) to improve e-commerce user targeting and satisfaction.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80", // macbook pro
+      image: "/lovable-uploads/0f0cdf39-3f28-439e-82f2-2d5a227f1960.png", // E-Commerce recommendation system image
       technologies: ["Python", "Machine Learning", "K-Means", "DBSCAN", "Streamlit"],
       githubLink: "https://github.com/PSantoshReddy12205497/ecommerce-recommendation",
       liveLink: "#",
@@ -35,7 +36,7 @@ const Index = () => {
       title: "Cold Email Generator",
       description:
         "Developed a Streamlit application for generating cold emails based on skill requirements, powered by Llama-3, Groq API, Langchain, ChromaDB, and FastAPI.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80", // laptop
+      image: "/lovable-uploads/c80f0006-00b3-4e29-890b-88b2877d5dd6.png", // Cold email generator image
       technologies: ["Python", "Groq", "Langchain", "ChromaDB", "Streamlit", "FastAPI"],
       githubLink: "https://github.com/PSantoshReddy12205497/cold-email-generator",
       liveLink: "#",
