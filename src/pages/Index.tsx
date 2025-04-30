@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Github, Linkedin, Mail, Award, Certificate, Trophy } from "lucide-react";
+import { Github, Linkedin, Mail, Award, BookmarkCheck, Trophy } from "lucide-react";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -63,7 +63,7 @@ const Index = () => {
     { title: "Hackerrank 5 Star Badge Python", date: "Jan 2024" },
     { title: "Top 10% at University (Academics and extra-curriculars)", date: "" }
   ];
-
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -136,7 +136,7 @@ const Index = () => {
       {/* Main Content */}
       <main className="container mx-auto py-8 px-4 md:px-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-          {/* About Tab */}
+          {/* Tab Triggers */}
           <TabsList className="hidden">
             <TabsTrigger value="about">About</TabsTrigger>
             <TabsTrigger value="projects">Projects</TabsTrigger>
@@ -144,7 +144,7 @@ const Index = () => {
             <TabsTrigger value="contact">Contact</TabsTrigger>
           </TabsList>
 
-          {/* About */}
+          {/* About Tab */}
           <TabsContent value="about" className="space-y-8">
             <section className="bg-white rounded-lg shadow p-6 animate-fade-in">
               <div className="flex flex-col md:flex-row gap-8">
@@ -193,7 +193,7 @@ const Index = () => {
             </section>
           </TabsContent>
 
-          {/* Projects */}
+          {/* Projects Tab */}
           <TabsContent value="projects" className="space-y-8">
             <section className="bg-white rounded-lg shadow p-6 animate-fade-in">
               <h2 className="text-3xl font-bold mb-4 text-violet-900">Featured Projects</h2>
@@ -249,7 +249,7 @@ const Index = () => {
                 {/* Certifications */}
                 <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <Certificate className="text-violet-700" size={24} />
+                    <BookmarkCheck className="text-violet-700" size={24} />
                     <h3 className="text-xl font-semibold text-violet-800">Certifications</h3>
                   </div>
                   <div className="space-y-4">
