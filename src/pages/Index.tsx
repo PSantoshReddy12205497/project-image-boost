@@ -16,7 +16,7 @@ const Index = () => {
         "Developed an AI-driven Alzheimer's Disease Prediction System. Designed a Streamlit-based UI for an intuitive and user-friendly experience using Support Vector Machine (SVM) with 93% accuracy. Deployed with IBM Cloud, Streamlit for accessibility, and real-time testing.",
       image: "/lovable-uploads/d5b4bc00-b24e-45ce-881f-3ee289a42c87.png", // Alzheimer's disease image
       technologies: ["Python", "scikit-learn", "NumPy", "pandas", "TensorFlow", "Streamlit", "IBMCloud"],
-      githubLink: "https://github.com/PSantoshReddy12205497/alzheimers-predictor",
+      githubLink: "https://github.com/arpy8/Alzheimers_Prediction_System",
       liveLink: "#",
       date: "July 2024",
     },
@@ -27,7 +27,7 @@ const Index = () => {
         "Built a recommendation system using unsupervised algorithms (K-Means, DBSCAN) to improve e-commerce user targeting and satisfaction.",
       image: "/lovable-uploads/0f0cdf39-3f28-439e-82f2-2d5a227f1960.png", // E-Commerce recommendation system image
       technologies: ["Python", "Machine Learning", "K-Means", "DBSCAN", "Streamlit"],
-      githubLink: "https://github.com/PSantoshReddy12205497/ecommerce-recommendation",
+      githubLink: "https://github.com/Vaibhav67979/Ecommerce-product-recommendation-system",
       liveLink: "#",
       date: "November 2024",
     },
@@ -38,7 +38,7 @@ const Index = () => {
         "Developed a Streamlit application for generating cold emails based on skill requirements, powered by Llama-3, Groq API, Langchain, ChromaDB, and FastAPI.",
       image: "/lovable-uploads/c80f0006-00b3-4e29-890b-88b2877d5dd6.png", // Cold email generator image
       technologies: ["Python", "Groq", "Langchain", "ChromaDB", "Streamlit", "FastAPI"],
-      githubLink: "https://github.com/PSantoshReddy12205497/cold-email-generator",
+      githubLink: "https://github.com/codebasics/project-genai-cold-email-generator",
       liveLink: "#",
       date: "September 2024",
     },
