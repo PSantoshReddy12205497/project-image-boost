@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -172,11 +171,6 @@ const Index = () => {
                       ))}
                     </ul>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-violet-800">Highlights & Achievements:</h3>
-                  <ul className="list-disc ml-6 text-gray-700 space-y-1">
-                    <li>Hackerrank 5 Star Badge in Python for algorithmic excellence (Jan 2024)</li>
-                    <li>Awarded top 10% Dean's list at University for extra-curriculars and grades</li>
-                  </ul>
                   <h3 className="text-lg font-semibold mb-2 text-violet-800 mt-4">Education:</h3>
                   <div>
                     <div className="flex justify-between text-base">
