@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,7 @@ const Index = () => {
     name: "Pulim Sai Santosh Reddy",
     title: "Aspiring Machine Learning Engineer & Full-Stack Enthusiast",
     image: "/lovable-uploads/91a19fa3-a908-4a76-abb4-bf3229b11b17.png",
-    profileUrl: "https://saisantoshreddy.dev", // Customized URL with name
+    profileUrl: "https://saisantoshreddy.dev", // Keeping URL for reference but not displaying
     contacts: {
       linkedin: "https://www.linkedin.com/in/sai-santosh-reddy-pulim",
       github: "https://github.com/PSantoshReddy12205497",
@@ -173,9 +172,7 @@ const Index = () => {
                   <div className="mt-4 text-center">
                     <h2 className="text-xl font-bold">{profileInfo.name}</h2>
                     <p className="text-base text-gray-600">{profileInfo.title}</p>
-                    <a href={profileInfo.profileUrl} className="text-violet-600 hover:underline text-sm mt-1 inline-block" target="_blank">
-                      {profileInfo.profileUrl}
-                    </a>
+                    {/* Removed the displayed URL here */}
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">
@@ -344,12 +341,7 @@ const Index = () => {
                         github.com/PSantoshReddy12205497
                       </a>
                     </li>
-                    <li className="flex items-center gap-2">
-                      <span className="font-medium">Personal Website:</span>
-                      <a href={profileInfo.profileUrl} target="_blank" className="text-blue-700 hover:underline">
-                        {profileInfo.profileUrl}
-                      </a>
-                    </li>
+                    {/* Removed the personal website URL from the display here */}
                     <li className="flex items-center gap-2">
                       <span className="font-medium">Mobile:</span>
                       <span className="text-gray-800 font-mono">{profileInfo.contacts.mobile}</span>
