@@ -1,19 +1,36 @@
+
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Github, Linkedin, Mail, Award, BookmarkCheck, Trophy } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("about");
 
+  // Profile information
+  const profileInfo = {
+    name: "Pulim Sai Santosh Reddy",
+    title: "Aspiring Machine Learning Engineer & Full-Stack Enthusiast",
+    image: "/lovable-uploads/91a19fa3-a908-4a76-abb4-bf3229b11b17.png",
+    profileUrl: "https://saisantoshreddy.dev", // Customized URL with name
+    contacts: {
+      linkedin: "https://www.linkedin.com/in/sai-santosh-reddy-pulim",
+      github: "https://github.com/PSantoshReddy12205497",
+      email: "saisantoshreddy27@gmail.com",
+      mobile: "+91-6300094352"
+    }
+  };
+
+  // Projects data
   const projects = [
     {
       id: 1,
       title: "Alzheimer's Disease Prediction System",
       description:
         "Developed an AI-driven Alzheimer's Disease Prediction System. Designed a Streamlit-based UI for an intuitive and user-friendly experience using Support Vector Machine (SVM) with 93% accuracy. Deployed with IBM Cloud, Streamlit for accessibility, and real-time testing.",
-      image: "/lovable-uploads/d5b4bc00-b24e-45ce-881f-3ee289a42c87.png", // Alzheimer's disease image
+      image: "/lovable-uploads/d5b4bc00-b24e-45ce-881f-3ee289a42c87.png",
       technologies: ["Python", "scikit-learn", "NumPy", "pandas", "TensorFlow", "Streamlit", "IBMCloud"],
       githubLink: "https://github.com/arpy8/Alzheimers_Prediction_System",
       liveLink: "#",
@@ -24,7 +41,7 @@ const Index = () => {
       title: "E-Commerce Recommendation System",
       description:
         "Built a recommendation system using unsupervised algorithms (K-Means, DBSCAN) to improve e-commerce user targeting and satisfaction.",
-      image: "/lovable-uploads/0f0cdf39-3f28-439e-82f2-2d5a227f1960.png", // E-Commerce recommendation system image
+      image: "/lovable-uploads/0f0cdf39-3f28-439e-82f2-2d5a227f1960.png",
       technologies: ["Python", "Machine Learning", "K-Means", "DBSCAN", "Streamlit"],
       githubLink: "https://github.com/Vaibhav67979/Ecommerce-product-recommendation-system",
       liveLink: "#",
@@ -35,7 +52,7 @@ const Index = () => {
       title: "Cold Email Generator",
       description:
         "Developed a Streamlit application for generating cold emails based on skill requirements, powered by Llama-3, Groq API, Langchain, ChromaDB, and FastAPI.",
-      image: "/lovable-uploads/c80f0006-00b3-4e29-890b-88b2877d5dd6.png", // Cold email generator image
+      image: "/lovable-uploads/c80f0006-00b3-4e29-890b-88b2877d5dd6.png",
       technologies: ["Python", "Groq", "Langchain", "ChromaDB", "Streamlit", "FastAPI"],
       githubLink: "https://github.com/codebasics/project-genai-cold-email-generator",
       liveLink: "#",
@@ -70,27 +87,27 @@ const Index = () => {
       <header className="bg-white shadow-sm">
         <div className="container mx-auto py-6 px-4 md:px-6 flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 leading-tight">Pulim Sai Santosh Reddy</h1>
+            <h1 className="text-3xl font-bold text-gray-900 leading-tight">{profileInfo.name}</h1>
             <ul className="flex flex-wrap mt-2 gap-x-4 gap-y-1 text-base text-gray-700">
               <li className="flex items-center gap-1">
                 <Linkedin size={18} className="text-blue-700" />
-                <a href="https://www.linkedin.com/in/sai-santosh-reddy-pulim" className="hover:underline" target="_blank">
+                <a href={profileInfo.contacts.linkedin} className="hover:underline" target="_blank">
                   LinkedIn
                 </a>
               </li>
               <li className="flex items-center gap-1">
                 <Github size={18} />
-                <a href="https://github.com/PSantoshReddy12205497" className="hover:underline" target="_blank">
+                <a href={profileInfo.contacts.github} className="hover:underline" target="_blank">
                   Github
                 </a>
               </li>
               <li className="flex items-center gap-1">
                 <Mail size={18} className="text-rose-700" />
-                <a href="mailto:saisantoshreddy27@gmail.com" className="hover:underline">Email</a>
+                <a href={`mailto:${profileInfo.contacts.email}`} className="hover:underline">Email</a>
               </li>
               <li className="flex items-center gap-1">
                 <span className="font-semibold text-gray-700">Mobile:</span>
-                <span className="font-mono">+91-6300094352</span>
+                <span className="font-mono">{profileInfo.contacts.mobile}</span>
               </li>
             </ul>
           </div>
@@ -149,14 +166,16 @@ const Index = () => {
             <section className="bg-white rounded-lg shadow p-6 animate-fade-in">
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="w-full md:w-1/3 flex flex-col items-center">
-                  <img
-                    src="/lovable-uploads/131d8488-14bc-4c6a-b323-21fa06693832.png"
-                    alt="Profile"
-                    className="w-40 h-40 object-cover rounded-full border-4 border-violet-300 shadow hover:scale-105 transition-transform"
-                  />
+                  <Avatar className="w-40 h-40 border-4 border-violet-300 shadow hover:scale-105 transition-transform">
+                    <AvatarImage src={profileInfo.image} alt="Profile" className="object-cover" />
+                    <AvatarFallback>SSR</AvatarFallback>
+                  </Avatar>
                   <div className="mt-4 text-center">
-                    <h2 className="text-xl font-bold">Sai Santosh Reddy Pulim</h2>
-                    <p className="text-base text-gray-600">Aspiring Machine Learning Engineer & Full-Stack Enthusiast</p>
+                    <h2 className="text-xl font-bold">{profileInfo.name}</h2>
+                    <p className="text-base text-gray-600">{profileInfo.title}</p>
+                    <a href={profileInfo.profileUrl} className="text-violet-600 hover:underline text-sm mt-1 inline-block" target="_blank">
+                      {profileInfo.profileUrl}
+                    </a>
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">
@@ -299,14 +318,14 @@ const Index = () => {
                   <ul className="space-y-3">
                     <li className="flex items-center gap-2">
                       <Mail size={20} className="text-rose-700" />
-                      <a href="mailto:saisantoshreddy27@gmail.com" className="text-blue-700 hover:underline">
-                        saisantoshreddy27@gmail.com
+                      <a href={`mailto:${profileInfo.contacts.email}`} className="text-blue-700 hover:underline">
+                        {profileInfo.contacts.email}
                       </a>
                     </li>
                     <li className="flex items-center gap-2">
                       <Linkedin size={20} className="text-blue-700" />
                       <a
-                        href="https://www.linkedin.com/in/sai-santosh-reddy-pulim"
+                        href={profileInfo.contacts.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-700 hover:underline"
@@ -317,7 +336,7 @@ const Index = () => {
                     <li className="flex items-center gap-2">
                       <Github size={20} />
                       <a
-                        href="https://github.com/PSantoshReddy12205497"
+                        href={profileInfo.contacts.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-700 hover:underline"
@@ -326,8 +345,14 @@ const Index = () => {
                       </a>
                     </li>
                     <li className="flex items-center gap-2">
+                      <span className="font-medium">Personal Website:</span>
+                      <a href={profileInfo.profileUrl} target="_blank" className="text-blue-700 hover:underline">
+                        {profileInfo.profileUrl}
+                      </a>
+                    </li>
+                    <li className="flex items-center gap-2">
                       <span className="font-medium">Mobile:</span>
-                      <span className="text-gray-800 font-mono">+91-6300094352</span>
+                      <span className="text-gray-800 font-mono">{profileInfo.contacts.mobile}</span>
                     </li>
                   </ul>
                 </div>
