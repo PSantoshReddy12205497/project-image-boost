@@ -13,28 +13,29 @@ interface FloatingCardProps {
 }
 
 export const FloatingCard = ({ position, title, description, color = "#8b5cf6", onClick }: FloatingCardProps) => {
-  const groupRef = useRef<THREE.Group>(null);
+  const meshRef = useRef<THREE.Mesh>(null);
   const [hovered, setHovered] = useState(false);
+  const { viewport } = useThree();
 
   useFrame((state) => {
-    if (groupRef.current) {
+    if (meshRef.current) {
       // Floating animation
-      groupRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime + position[0]) * 0.1;
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime + position[0]) * 0.1;
       
       // Hover animation
       if (hovered) {
-        groupRef.current.scale.setScalar(1.1);
-        groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 2) * 0.1;
+        meshRef.current.scale.setScalar(1.1);
+        meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 2) * 0.1;
       } else {
-        groupRef.current.scale.setScalar(1);
-        groupRef.current.rotation.y = 0;
+        meshRef.current.scale.setScalar(1);
+        meshRef.current.rotation.y = 0;
       }
     }
   });
 
   return (
     <group
-      ref={groupRef}
+      ref={meshRef}
       position={position}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
@@ -58,6 +59,7 @@ export const FloatingCard = ({ position, title, description, color = "#8b5cf6", 
         color="white"
         anchorX="center"
         anchorY="middle"
+        font="/fonts/helvetiker_regular.typeface.json"
       >
         {title}
       </Text>
@@ -70,6 +72,7 @@ export const FloatingCard = ({ position, title, description, color = "#8b5cf6", 
         anchorY="middle"
         maxWidth={1.8}
         textAlign="center"
+        font="/fonts/helvetiker_regular.typeface.json"
       >
         {description}
       </Text>
