@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Cube, Layout } from "lucide-react";
+import { Box, Layout } from "lucide-react";
 
 interface ViewToggleProps {
   is3D: boolean;
@@ -22,7 +22,7 @@ export const ViewToggle = ({ is3D, onToggle }: ViewToggleProps) => {
         </>
       ) : (
         <>
-          <Cube size={16} className="mr-2" />
+          <Box size={16} className="mr-2" />
           3D View
         </>
       )}
